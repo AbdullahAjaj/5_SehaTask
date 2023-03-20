@@ -1,0 +1,114 @@
+{
+  "Cities": [
+    {
+      "id": 1,
+      "nameEng": "Ramallah",
+      "nameAr": "رام الله",
+      "date": "1/23/2023"
+    },
+    {
+      "id": 2,
+      "nameEng": "Nablus",
+      "nameAr": "نابلس",
+      "date": "7/7/2022"
+    },
+    {
+      "id": 3,
+      "nameEng": "Beit Lahm",
+      "nameAr": "بيت لحم",
+      "date": "10/18/2022"
+    },
+    {
+      "id": 4,
+      "nameEng": "Jerusalem",
+      "nameAr": "القدس",
+      "date": "1/7/2023"
+    },
+    {
+      "id": 5,
+      "nameEng": "Jericho",
+      "nameAr": "اريحا",
+      "date": "12/16/2022"
+    },
+    {
+      "id": 6,
+      "nameEng": "Jenin",
+      "nameAr": "جنين",
+      "date": "8/20/2022"
+    },
+    {
+      "id": 7,
+      "nameEng": "Qalqilya",
+      "nameAr": "قلقيلية",
+      "date": "7/27/2022"
+    },
+    {
+      "id": 8,
+      "nameEng": "Tulkarm",
+      "nameAr": "طولكرم",
+      "date": "7/28/2022"
+    },
+    {
+      "id": 9,
+      "nameEng": "Jaffa",
+      "nameAr": "يافا",
+      "date": "10/1/2022"
+    },
+    {
+      "id": 10,
+      "nameEng": "Haifa",
+      "nameAr": "حيفا",
+      "date": "2/8/2023"
+    },
+    {
+      "id": 1679317448165,
+      "nameEng": "ram",
+      "nameAr": "رام",
+      "date": "3/20/2023"
+    }
+  ],
+  "Users": [
+    {
+      "id": 1,
+      "firstName": "Abdullah",
+      "lastName": "Ajaj",
+      "email": "aa@gmail.com",
+      "mobile": "0567367264"
+    },
+    {
+      "id": 2,
+      "firstName": "Ahmad",
+      "lastName": "Mohammad",
+      "email": "am@gmail.com",
+      "mobile": "0567467264"
+    },
+    {
+      "id": 3,
+      "firstName": "Mohammad",
+      "lastName": "Ahmad",
+      "email": "ma@gmail.com",
+      "mobile": "0567343264"
+    },
+    {
+      "id": 4,
+      "firstName": "Amer",
+      "lastName": "Ammar",
+      "email": "aa@gmail.com",
+      "mobile": "0567367284"
+    },
+    {
+      "id": 5,
+      "firstName": "Omar",
+      "lastName": "Ameer",
+      "email": "oa@gmail.com",
+      "mobile": "0598367264"
+    },
+    {
+      "id": 1679317485970,
+      "firstName": "Abdullah",
+      "lastName": "Ajaj",
+      "email": "abdollahmjajaj@gmail.com",
+      "mobile": "0586354654899"
+    }
+  ]
+}
