@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import CitiesForm from "./components/CitiesForm";
+import DeleteDialog from "./components/DeleteDialog";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
+import ReportsForm from "./components/ReportsForm";
 import TableList from "./components/TableList";
 import UsersForm from "./components/UsersForm";
 
 const App = () => {
   const [dataList, setDataList] = useState(null);
   const [whoFormVisible, setWhoFormVisible] = useState("show"); //show,new,edit
-  const [listName, setListName] = useState("Cities"); // cities, users
+  const [listName, setListName] = useState("Cities"); // Cities, Users, Reports
   const [headers, setHeaders] = useState({});
+  const [isDialogVisible, setIsDialogVisible] = useState(false);
 
   useEffect(() => {
     fetch(`http://localhost:8000/${listName}`)
@@ -20,6 +23,7 @@ const App = () => {
         setDataList(data);
         console.log(data);
       });
+
     listName === "Cities"
       ? setHeaders({
           id: "id",
@@ -27,15 +31,20 @@ const App = () => {
           nameAr: "Arabic Name",
           date: "Date",
         })
-      : setHeaders({
+      : listName === "Users"
+      ? setHeaders({
           id: "id",
           firstName: "First Name",
           lastName: "Last Name",
           email: "Email",
           mobile: "mobile",
+        })
+      : setHeaders({
+          id: "id",
+          username: "Username",
+          reason: "Reason",
+          date: "Date",
         });
-    console.log("headers");
-    console.log(headers);
   }, [listName, whoFormVisible]);
 
   function handleCancelClick() {
@@ -65,7 +74,8 @@ const App = () => {
         let formInputs = [...document.forms["form"].children].slice(2);
 
         formInputs.forEach((item) => {
-          document.forms["form"][item.name].value = data[item.name];
+          if (document.forms["form"][item.name] !== undefined)
+            document.forms["form"][item.name].value = data[item.name];
         });
       });
   }
@@ -90,6 +100,7 @@ const App = () => {
 
   function changeList(name) {
     setListName(name);
+    console.log(listName);
   }
 
   return (
@@ -120,9 +131,12 @@ const App = () => {
         <CitiesForm />
       ) : listName === "Users" ? (
         <UsersForm />
+      ) : listName === "Reports" ? (
+        <ReportsForm />
       ) : (
         ""
       )}
+      {isDialogVisible && <DeleteDialog />}
     </>
   );
 };

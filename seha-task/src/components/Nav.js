@@ -12,10 +12,9 @@ const Nav = ({ changeList }) => {
 
   return (
     <nav id="nav">
-      <li className="styled" onClick={handleLiClick}>
-        Cities
-      </li>
-      <li onClick={handleLiClick}>Users</li>
+      <li id="Cities" className="styled" onClick={handleLiClick}>Cities</li>
+      <li id="Users" onClick={handleLiClick}>Users</li>
+      <li id="Reports" onClick={handleLiClick}>Reports</li>
     </nav>
   );
 };

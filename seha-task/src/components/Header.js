@@ -24,7 +24,8 @@ const Header = ({
     let formInputs = [...document.forms["form"].children].slice(2);
 
     formInputs.forEach((item) => {
-      objData[item.name] = document.forms["form"][item.name].value;
+      if (document.forms["form"][item.name] !== undefined)
+        objData[item.name] = document.forms["form"][item.name].value;
     });
 
     updateData(objData);

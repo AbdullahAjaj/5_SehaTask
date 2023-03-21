@@ -114,3 +114,45 @@ nav .styled{
   background-color: black;
   border-radius: 5px;
 }
+
+
+.popup-overlay{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.popup-box{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  background-color: #CCC;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 10px;
+  font-size: 30px;
+}
+.popup-box p{
+  width: calc(100% - 40px);
+}
+.popup-box button{
+  text-decoration: none;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+.popup-box button.yes{
+  background-color: #bb2d3b;
+}
+.popup-box button.Cancel{
+  background-color: white;
+  color: black;
+}
