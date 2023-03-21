@@ -12,6 +12,7 @@ const App = () => {
   const [whoFormVisible, setWhoFormVisible] = useState("show"); //show,new,edit
   const [listName, setListName] = useState("Cities"); // Cities, Users, Reports
   const [headers, setHeaders] = useState({});
+  const [itemId, setItemId] = useState(null);
   const [isDialogVisible, setIsDialogVisible] = useState(false);
 
   useEffect(() => {
@@ -45,7 +46,7 @@ const App = () => {
           reason: "Reason",
           date: "Date",
         });
-  }, [listName, whoFormVisible]);
+  }, [listName, whoFormVisible, isDialogVisible]);
 
   function handleCancelClick() {
     setWhoFormVisible("show");
@@ -89,13 +90,26 @@ const App = () => {
     setWhoFormVisible("show");
   }
 
-  async function deleteClick(deletedObj) {
-    console.log("Hi");
-    await fetch(`http://localhost:8000/${listName}/${deletedObj.id}`, {
+  function closeClick() {
+    setIsDialogVisible(false);
+    setItemId(null);
+  }
+
+  function deleteClick(objId) {
+    setIsDialogVisible(true);
+    setItemId(objId);
+    console.log("Done");
+  }
+
+  async function confirmDeleteClick() {
+    console.log(itemId);
+    await fetch(`http://localhost:8000/${listName}/${itemId}`, {
       method: "DELETE",
     });
     console.log("Deleted");
     setWhoFormVisible("show");
+    setIsDialogVisible(false);
+    setItemId(null);
   }
 
   function changeList(name) {
@@ -136,7 +150,12 @@ const App = () => {
       ) : (
         ""
       )}
-      {isDialogVisible && <DeleteDialog />}
+      {isDialogVisible && (
+        <DeleteDialog
+          confirmDeleteClick={confirmDeleteClick}
+          closeClick={closeClick}
+        />
+      )}
     </>
   );
 };

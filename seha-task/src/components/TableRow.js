@@ -7,7 +7,7 @@ const TableRow = ({ dataItem, headers, editClick, deleteClick }) => {
     editClick(dataItem);
   }
   function handleDeleteClick() {
-    deleteClick(dataItem);
+    deleteClick(dataItem.id);
   }
 
   return (

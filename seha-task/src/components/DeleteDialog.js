@@ -1,9 +1,13 @@
 import closeIcon from "./../images/close.png";
 
-const DeleteDialog = () => {
-  function handleCloseClick() {}
+const DeleteDialog = ({ confirmDeleteClick, closeClick }) => {
+  function handleCloseClick() {
+    closeClick();
+  }
 
-  function handleDeleteConfirmation() {}
+  function handleDeleteConfirmation() {
+    confirmDeleteClick();
+  }
 
   return (
     <div className="popup-overlay">
