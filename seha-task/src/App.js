@@ -46,6 +46,14 @@ const App = () => {
           reason: "Reason",
           date: "Date",
         });
+
+    // if (document.getElementById("nav") !== null) {
+    //   let myNav = [...document.getElementById("nav").children];
+    //   myNav.forEach((item) => {
+    //     item.classList.remove("styled");
+    //   });
+    //   document.getElementById(listName).classList.add("styled");
+    // }
   }, [listName, whoFormVisible, isDialogVisible]);
 
   function handleCancelClick() {
@@ -129,7 +137,7 @@ const App = () => {
 
       {whoFormVisible === "show" ? (
         <>
-          <Nav changeList={changeList} />
+          <Nav changeList={changeList} listName={listName} />
           {dataList && (
             <TableList
               dataList={dataList}
